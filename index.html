@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Adicionar produto -->
+
+    <div class="add_product">
+        <label for="add-product-name">Adicione um produto:</label>
+        <input id="add-product-name" type="text" name="product">
+        <label for="add-product-quantity">Informe a quantidade do produto:</label>
+        <input id="add-product-quantity" type="number" name="quantity">
+        <label for="add-product-price">Informe o preço do produto:</label>
+        <input id="add-product-price" type="number" name="price">
+
+        <div><button id="add-product-btn">Adicionar</button></div>
+
+        <p id="success-message" class="hide">Produto adicionado!</p>
+    </div>
+
+    <!-- Estoque -->
+
+    <div id="estoque-container"></div>
+
+    <!-- Atualizar estoque -->
+
+    <div class="update_stock">
+        <label for="update-product-id">Informe o código do produto que deseja editar:</label>
+        <input id="update-product-id" type="text" name="product">
+
+        <label for="update-product-name" class="hide">Informe o novo nome do produto:</label>
+        <input id="update-product-name" class="hide" type="text" name="name">
+
+        <label for="update-product-price" class="hide">Informe o novo preço do produto:</label>
+        <input id="update-product-price" class="hide" type="text" name="price">
+
+        <label for="update-product-quantity" class="hide">Informe a quantidade do produto que deseja adicionar:</label>
+        <input id="update-product-quantity" class="hide" type="number" name="quantity">
+        
+        <div><button id="update-stock-btn">Atualizar</button></div>
+    
+    </div>    
+    
+    <!-- Remover produto -->
+
+    <div class="delete_product">
+        <label for="delete-product-name">Informe o nome do produto que deseja remover:</label>
+        <input id="delete-product-name" type="text" name="product">
+
+        <div><button id="delete-product-btn">Remover</button></div>  
+    </div>
+
+    <!-- Mostrar estoque -->
+
+    <div><button id="show-stock-btn">Mostrar estoque</button></div>
+    <div id="stock-output"></div>
+</body>
+</html>

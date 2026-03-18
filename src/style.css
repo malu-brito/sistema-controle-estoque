@@ -1,0 +1,114 @@
+.add_product,
+.update_stock,
+.delete_product {
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    margin-top: 40px;
+    border: 3px solid #0d6efd;
+    border-radius: 8px;
+    padding: 30px;
+    align-items: center;
+    gap: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+/* Inputs */
+.add_product input,
+.update_stock input,
+.delete_product input {
+    width: 100%;
+    padding: 5px;
+}
+
+/* Botões */
+#add-product-btn,
+#update-stock-btn,
+#delete-product-btn,
+.delete-product-btn {
+    margin-top: 1rem;
+    border-radius: 5px;
+    color: #fff;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/* Botão adicionar */
+#add-product-btn {
+    background-color: #0dfd49;
+}
+#add-product-btn:hover {
+    background-color: #0bb4356c;
+}
+
+/* Botão atualizar */
+#update-stock-btn {
+    background-color: #0d6efd;
+}
+#update-stock-btn:hover {
+    background-color: #0b469e71;
+}
+
+/* Botão remover */
+#delete-product-btn {
+    background-color: #fa1919;
+}
+#delete-product-btn:hover {
+    background-color: #b912127c;
+}
+
+/* Mostrar estoque */
+#show-stock-btn {
+    margin-top: 2rem;
+    background-color: #0d6efd;
+    border-radius: 5px;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#show-stock-btn:hover {
+    background-color: #0b469e71;
+}
+
+/* Área de saída */
+#stock-output {
+    margin-top: 20px;
+    white-space: pre-line;
+    font-family: monospace;
+}
+
+
+/* estoque */
+
+.card {
+    background-color: #ccc;
+    color: #000;
+    font-weight: bold;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 3px solid #0d6efd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 16rem;
+}
+
+.card h3 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+#estoque-container {
+    margin-top: 20px;
+}
+
+.delete-product-btn {
+    background-color: #fa1919;
+}
