@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Estoque</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="src/script.js" defer></script>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css"/>
 </head>
 <body>
-    <!-- Adicionar produto -->
+    <header>
+      <h1>DevStock</h1>
+      <div id="search-container">
+        <i class="bi bi-search"></i>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Busque por um produto..."
+        />
+      </div>
+      <button id="export-stock">
+        Exportar CSV <i class="bi bi-download"></i>
+      </button>
+    </header>
+
+<div class="main-container">
+    <div class="forms-container">
+        <!-- Adicionar produto -->
 
     <div class="add_product">
+        <h2>Adicionar produto</h2>
         <label for="add-product-name">Adicione um produto:</label>
         <input id="add-product-name" type="text" name="product">
         <label for="add-product-quantity">Informe a quantidade do produto:</label>
@@ -23,13 +42,10 @@
         <p id="success-message" class="hide">Produto adicionado!</p>
     </div>
 
-    <!-- Estoque -->
-
-    <div id="estoque-container"></div>
-
     <!-- Atualizar estoque -->
 
     <div class="update_stock">
+        <h2>Atualizar estoque</h2>
         <label for="update-product-id">Informe o código do produto que deseja editar:</label>
         <input id="update-product-id" type="text" name="product">
 
@@ -49,15 +65,24 @@
     <!-- Remover produto -->
 
     <div class="delete_product">
+        <h2>Deletar produto</h2>
         <label for="delete-product-name">Informe o nome do produto que deseja remover:</label>
         <input id="delete-product-name" type="text" name="product">
 
-        <div><button id="delete-product-btn">Remover</button></div>  
+        <div><button id="delete-product-btn">Remover</button></div> 
+
+
     </div>
 
     <!-- Mostrar estoque -->
 
     <div><button id="show-stock-btn">Mostrar estoque</button></div>
     <div id="stock-output"></div>
+    </div>
+
+    <!-- Estoque -->
+
+    <div id="estoque-container"></div>
+</div>
 </body>
 </html>

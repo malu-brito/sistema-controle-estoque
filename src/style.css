@@ -1,15 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+body {
+    background-color: #202124;
+    color: #e4e4e4;
+}
+
+header {
+    border-bottom: 1px solid #3a3b3c;
+    padding: 1rem 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#search-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#search-input {
+    background-color: #3a3b3c;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    color: #ddd;
+    width: 400px;
+}
+
+#search-input::placeholder {
+    color: #ddd;
+}
+
+#export-stock {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #e4e4e4;
+    border-radius: 4px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#export-stock:hover {
+    background-color: #3a3b3c;
+}
+
+.main-container {
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+    /* max-width: 1200px;
+    margin: 0 auto; */
+}
+
+.forms-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .add_product,
 .update_stock,
 .delete_product {
     display: flex;
     flex-direction: column;
-    width: 14rem;
-    margin-top: 40px;
-    border: 3px solid #0d6efd;
+    border: 1px solid #3a3b3c;
+    background-color: #2d2f31;
+    color: #e4e4e4;
     border-radius: 8px;
     padding: 30px;
     align-items: center;
     gap: 10px;
+}
+
+.add_product h2,
+.update_stock h2,
+.delete_product h2 {
+    font-size: 16px;
+    color: #0d6efd;
 }
 
 .hide {
@@ -20,8 +96,11 @@
 .add_product input,
 .update_stock input,
 .delete_product input {
-    width: 100%;
-    padding: 5px;
+    background-color: #3a3b3c;
+    border: 1px solid #555;
+    color: #e4e4e4;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 /* Botões */
@@ -40,10 +119,10 @@
 
 /* Botão adicionar */
 #add-product-btn {
-    background-color: #0dfd49;
+    background-color: #198754;
 }
 #add-product-btn:hover {
-    background-color: #0bb4356c;
+    background-color: #146c43;
 }
 
 /* Botão atualizar */
@@ -84,31 +163,54 @@
     font-family: monospace;
 }
 
-
 /* estoque */
 
 .card {
-    background-color: #ccc;
-    color: #000;
+    background-color: #2d2f31;
+    color: #e4e4e4;
     font-weight: bold;
-    padding: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-bottom: 12px;
-    border: 3px solid #0d6efd;
+    border: 1px solid #3a3b3c;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    width: 16rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    width: 260px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 
 .card h3 {
     text-align: center;
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 18px;
+    color: #0d6efd;
+}
+
+.card p {
+    font-size: 14px;
+    color: #ccc;
 }
 
 #estoque-container {
-    margin-top: 20px;
+    align-content: flex-start;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#estoque-container {
+    flex: 1;
 }
 
 .delete-product-btn {
-    background-color: #fa1919;
+    background-color: #dc3545;
+    margin-top: 10px;
 }

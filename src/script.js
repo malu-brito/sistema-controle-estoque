@@ -94,11 +94,10 @@ function renderEstoque() {
         <p>Nome do produto: ${produto.nome}</p>
         <p>Quantidade em estoque: ${produto.quantidade}</p>
         <p>Preço do produto: R$ ${produto.preco}</p>
-        </div>
-
         <button class="delete-product-btn" data-id="${produto.id}">Remover produto</button>
+        </div>
         `
-
+        
         estoqueContainer.innerHTML += card
 
     })
