@@ -89,7 +89,6 @@ function renderEstoque() {
 
         const card = `
         <div class="card">
-        <h3>Estoque</h3>
         <p>Código do produto: ${idFormatado}</p>
         <p>Nome do produto: ${produto.nome}</p>
         <p>Quantidade em estoque: ${produto.quantidade}</p>

@@ -53,12 +53,47 @@ header {
     background-color: #3a3b3c;
 }
 
-.main-container {
+.app-container {
     display: flex;
-    gap: 40px;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #1b1c1d;
+    border-right: 1px solid #3a3b3c;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: calc(100vh - 70px);
+}
+
+.sidebar button {
+    background: none;
+    border: none;
+    color: #e4e4e4;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.sidebar button:hover {
+    background-color: #2d2f31;
+}
+
+.main-container {
+    flex: 1;
     padding: 30px;
-    /* max-width: 1200px;
-    margin: 0 auto; */
+}
+
+.tela {
+    display: none;
+}
+
+.tela.ativa {
+    display: block;
 }
 
 .forms-container {
@@ -79,6 +114,13 @@ header {
     padding: 30px;
     align-items: center;
     gap: 10px;
+}
+
+.add_product:hover,
+.update_stock:hover,
+.delete_product:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 
 .add_product h2,
@@ -102,6 +144,7 @@ header {
     padding: 8px;
     border-radius: 5px;
 }
+
 
 /* Botões */
 #add-product-btn,
@@ -211,6 +254,14 @@ header {
 }
 
 .delete-product-btn {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
     background-color: #dc3545;
     margin-top: 10px;
+    transition: all 0.2s ease;
+}
+
+.delete-product-btn:hover {
+    background-color: #bb2d3b;
 }
