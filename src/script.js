@@ -174,6 +174,7 @@ updateStockBtn.addEventListener("click", (e) => {
         renderEstoque()
 
         produtoEmEdicao = null
+        updateStockBtn.textContent = "Atualizar"
 
         inputNome.value = ""
         inputPrice.value = ""
@@ -208,6 +209,7 @@ function buscarProduto() {
     } else {
 
     produtoEmEdicao = produtoEncontrado
+    updateStockBtn.textContent = "Salvar"
 
     const labelNome = document.getElementById("label-product-name")
     labelNome.classList.remove("hide")
