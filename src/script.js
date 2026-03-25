@@ -106,6 +106,7 @@ addProductBtn.addEventListener("click", (e) => {
     }
 })
 
+
 function renderEstoque() {
 
     estoqueContainer.innerHTML = ""
@@ -140,7 +141,63 @@ function removerProduto(id) {
 
 // editar produto
 
-function atualizarProduto(id) {
+let produtoEmEdicao = null
+
+const updateStockBtn = document.getElementById("update-stock-btn")
+
+updateStockBtn.addEventListener("click", (e) => {
+
+    if (!produtoEmEdicao) {
+        buscarProduto()
+    } else {
+        const inputNome = document.getElementById("update-product-name")
+        const novoNome = inputNome.value
+        
+        produtoEmEdicao.nome = novoNome
+
+        const inputPrice = document.getElementById("update-product-price")
+        const novoPrice = Number(inputPrice.value)
+
+        const inputQuantity = document.getElementById("update-product-quantity")
+        const novaQuantity = Number(inputQuantity.value)
+
+        if (novoPrice <= 0 || novaQuantity <= 0 || novoNome === "") {
+        console.log("Dados inválidos")
+        return
+        }
+
+        produtoEmEdicao.preco = novoPrice
+        produtoEmEdicao.quantidade = novaQuantity
+
+        salvarEstoque()
+
+        renderEstoque()
+
+        produtoEmEdicao = null
+
+        inputNome.value = ""
+        inputPrice.value = ""
+        inputQuantity.value = ""
+
+        inputNome.classList.add("hide")
+        const labelNome = document.getElementById("label-product-name")
+        labelNome.classList.add("hide")
+
+        inputPrice.classList.add("hide")
+        const labelPrice = document.getElementById("label-product-price")
+        labelPrice.classList.add("hide")
+
+        inputQuantity.classList.add("hide")
+        const labelQuantity = document.getElementById("label-product-quantity")
+        labelQuantity.classList.add("hide")
+
+        const produtoId = document.getElementById("update-product-id")
+        produtoId.value = ""
+}
+    
+})
+
+function buscarProduto() {
     const produtoId = document.getElementById("update-product-id")
     const valorId = Number(produtoId.value)
 
@@ -148,6 +205,30 @@ function atualizarProduto(id) {
 
     if (!produtoEncontrado) {
     console.log("Produto não encontrado")
+    } else {
+
+    produtoEmEdicao = produtoEncontrado
+
+    const labelNome = document.getElementById("label-product-name")
+    labelNome.classList.remove("hide")
+
+    const inputNome = document.getElementById("update-product-name")
+    inputNome.value = produtoEncontrado.nome
+    inputNome.classList.remove("hide")
+
+    const labelPrice = document.getElementById("label-product-price")
+    labelPrice.classList.remove("hide")
+
+    const inputPrice = document.getElementById("update-product-price")
+    inputPrice.value = produtoEncontrado.preco
+    inputPrice.classList.remove("hide")
+
+    const labelQuantity = document.getElementById("label-product-quantity")
+    labelQuantity.classList.remove("hide")
+
+    const inputQuantity = document.getElementById("update-product-quantity")
+    inputQuantity.value = produtoEncontrado.quantidade
+    inputQuantity.classList.remove("hide")
     }
 
 }
