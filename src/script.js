@@ -5,6 +5,32 @@ let estoque = []
 
 let id = 1
 
+// troca de tela
+
+function trocarTela(id) {
+    const telas = document.querySelectorAll(".tela")
+
+    telas.forEach((tela) => {
+        tela.classList.remove("ativa")
+    })
+
+    const telaSelecionada = document.getElementById(id)
+
+    telaSelecionada.classList.add("ativa")
+}
+
+const sidebar = document.querySelector(".sidebar")
+
+sidebar.addEventListener("click", (e) => {
+
+    const tela = e.target.dataset.tela
+
+    if(tela && e.target.tagName === "BUTTON") {
+        trocarTela(tela)
+    }
+    
+})
+
 // seleção
 const addProductBtn = document.getElementById("add-product-btn")
 const estoqueContainer = document.getElementById("estoque-container")
@@ -114,14 +140,16 @@ function removerProduto(id) {
 
 // editar produto
 
-function editarProduto(produto) {
+function atualizarProduto(id) {
+    const produtoId = document.getElementById("update-product-id")
+    const valorId = Number(produtoId.value)
 
-    estoque.find(produto => produto.id === idProcurado)
+    const produtoEncontrado =  estoque.find((produto) => {return produto.id === valorId})
 
+    if (!produtoEncontrado) {
+    console.log("Produto não encontrado")
+    }
 
-    estoque.forEach(produto => {
-
-    })
 }
 
 function salvarEstoque() {
